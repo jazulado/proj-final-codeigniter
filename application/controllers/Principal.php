@@ -4,25 +4,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Principal extends CI_Controller {
 
 	function __construct() {
-		parent:: __construct();  
+		parent::__construct();  
 		$this->load->helper('form');
-		$this->load->model("usuarios_model");
-		$this->load->database();
-		$this->load->library('session');
 	    $this->load->helper('form');
+		$this->load->model("usuarios_model");
+		$this->load->library('session');
+		$this->load->database();
 	    $this->load->helper('url');
 		$this->load->library("grocery_CRUD");
-		$this->crud=new grocery_CRUD();/*
+		$this->crud=new grocery_CRUD();
 		if (!$this->session->userdata('id')) {
 			redirect('login');
 		}  
-		PARA USER
-		*/
+		
 
 	}
 
 	public function index()
-	{
+	{/*
 		$this->crud->set_theme('flexigrid');
 
 
@@ -75,20 +74,21 @@ class Principal extends CI_Controller {
     	$this->crud->set_relation('idtipoidentificacion','tipoidentificacion','tipoid');
     	$this->crud->set_relation('idepsasociada','tipoeps','nombreeps');
 	   	$tablacrud = $this->crud->render();
-
+*//*
 		$data["js_files"]=$tablacrud->js_files;
 		$data["css_files"]=$tablacrud->css_files;
 	    $data["tablacrud"] = $tablacrud->output;
-
+*/
 		$data["titulo"]="Listado de usuarios";
 		$data["nombreusuario"]=$this->session->userdata('nombre');
 
-		$this->load->view('header', $arrayHeader = array(
-			'tituloHeader' => "Principal HDV", 
-			"nombreusuario" => $data["nombreusuario"]));
-		$this->load->view('principal',$data);
+		//$this->load->view('header', $arrayHeader = array(
+		//	'tituloHeader' => "Principal HDV", 
+		//	"nombreusuario" => $data["nombreusuario"]));
+		$this->load->view('index',$data);
 
 	}
+
 
 	public function identificacion()
 	{
@@ -127,7 +127,7 @@ class Principal extends CI_Controller {
 	}
 
 	public function cliente()
-	{
+	{/*
 		$this->crud->set_theme('flexigrid');
 
 
@@ -159,7 +159,7 @@ class Principal extends CI_Controller {
 		$this->load->view('header', $arrayHeader = array(
 			'tituloHeader' => "Principal HDV", 
 			"nombreusuario" => $data["nombreusuario"]));
-		$this->load->view('principal',$data);
+		$this->load->view('principal',$data);*/
 	}
 
 	
