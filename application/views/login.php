@@ -32,7 +32,11 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <?php echo form_open('login/acceso/');?>
+                    <?php /* echo form_open('login/acceso/');*/
+                    echo form_open(base_url()."index.php/login/acceso")
+
+
+                    ?>
                         <div class="form-group">
                             <label>Correo Electronico</label>
                             <input type="email" name="correo" id="correo" class="form-control" placeholder="Correo Electronico">

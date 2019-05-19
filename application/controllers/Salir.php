@@ -17,7 +17,7 @@ class Salir extends CI_Controller {
 	{
 		// cuando se cargue el enlace hacia el controlador salir, en esta funcion se destruyen las variables y se redirecciona hacia login para que forze el usuario y clave de nuevo
 		$this->session->sess_destroy();
-		redirect('login');
+		redirect(site_url("login"));
 	}
 
 

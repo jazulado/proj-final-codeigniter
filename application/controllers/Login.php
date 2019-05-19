@@ -54,10 +54,14 @@ class Login extends CI_Controller {
 
 			);
 			$this->session->set_userdata($data_session);
-			redirect('principal');
+			redirect(site_url("principal"));
 		} else {
-			redirect('login');
+			redirect(site_url("login"));
 		}
+
+		/*
+		http://localhost:8080/proj-final-codeigniter/index.php/login/acceso
+		*/
 	
 
 	}

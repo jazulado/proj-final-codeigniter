@@ -19,7 +19,7 @@
                         <h4 class="mb-0">
                             <span class="count">10468</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light"># de Pacientes</p>
 
                         <div class="chart-wrapper px-0" style="height:70px;" height="70">
                             <canvas id="widgetChart1"></canvas>
@@ -47,9 +47,9 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">4324</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light"># de Medicos</p>
 
                         <div class="chart-wrapper px-0" style="height:70px;" height="70">
                             <canvas id="widgetChart2"></canvas>
@@ -76,9 +76,9 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">342423</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">Citas asignadas   </p>
 
                     </div>
 
@@ -105,9 +105,9 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">668</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">Medicamentos</p>
 
                         <div class="chart-wrapper px-3" style="height:70px;" height="70">
                             <canvas id="widgetChart4"></canvas>

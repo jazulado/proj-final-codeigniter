@@ -1,4 +1,4 @@
-<title>EPS Salud Total - <?php echo $titulo; ?></title>
+<title> <?php echo $titulo; ?> - EPS Salud Total</title>
 
 <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/font-awesome/css/font-awesome.min.css">

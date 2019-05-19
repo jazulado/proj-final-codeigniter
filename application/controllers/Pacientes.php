@@ -1,94 +1,85 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Principal extends CI_Controller {
+class Pacientes extends CI_Controller {
 
 	function __construct() {
-		parent::__construct();  
+		parent:: __construct();  
 		$this->load->helper('form');
-	    $this->load->helper('form');
 		$this->load->model("usuarios_model");
-		$this->load->library('session');
 		$this->load->database();
+		$this->load->library('session');
+	    $this->load->helper('form');
 	    $this->load->helper('url');
 		$this->load->library("grocery_CRUD");
 		$this->crud=new grocery_CRUD();
 		if (!$this->session->userdata('id')) {
-			redirect(site_url("login"));
+			redirect('login');
 		}  
 		
 
 	}
 
 	public function index()
-	{/*
+	{
 		$this->crud->set_theme('flexigrid');
 
 
-		$this->crud->set_table('usuarios')
-        ->set_subject('Hoja de vida de usuarios')
+		$this->crud->set_table('pacientes')
+        ->set_subject('Pacientes')
         ->columns(
-        	'nombres',
-        	'apellidos',
+        	'nombre',
+        	'apellido',
         	'telefono',
-        	'fechanacimiento',
-        	'idepsasociada',
-        	'idtipoidentificacion',
-        	'identificacion',
-        	'idtipocliente',
-        	'imagen'
+        	'email',
+        	'direccion',
+        	'idciudad',
+        	'observaciones'
         )
-        ->display_as('nombres','Nombres')
-        ->display_as('apellidos','Apellidos')
+        ->display_as('nombre','Nombre')
+        ->display_as('apellido','Apellido')
         ->display_as('telefono','Telefono')
-        ->display_as('fechanacimiento','Fecha de nacimiento')
-        ->display_as('idepsasociada','Eps asociada')
-        ->display_as('idtipoidentificacion','Tipo de identificacion')
-        ->display_as('identificacion','# id')
-        ->display_as('idtipocliente','Tipo de cliente')
-        ->display_as('imagen','Imagen');
+        ->display_as('email','Email')
+        ->display_as('direccion','Direccion')
+        ->display_as('idciudad','Ciudad')
+        ->display_as('observaciones','Observaciones');
 
 
 	    $this->crud->fields(
-        	'nombres',
-        	'apellidos',
+        	'nombre',
+        	'apellido',
         	'telefono',
-        	'fechanacimiento',
-        	'idepsasociada',
-        	'idtipoidentificacion',
-        	'identificacion',
-        	'idtipocliente',
-        	'imagen');
+        	'email',
+        	'direccion',
+        	'idciudad',
+        	'observaciones');
 	   	$this->crud->required_fields(
-        	'nombres',
-        	'apellidos',
+        	'nombre',
+        	'apellido',
         	'telefono',
-        	'fechanacimiento',
-        	'idepsasociada',
-        	'idtipoidentificacion',
-        	'identificacion',
-        	'idtipocliente',
-        	'imagen');
-		$this->crud->set_field_upload("imagen","assets/imagenes/");
-    	$this->crud->set_relation('idtipocliente','tipocliente','tipo');
+        	'email',
+        	'direccion',
+        	'idciudad',
+        	'observaciones');/*
+		$this->crud->set_field_upload("imagen","assets/imagenes/");*/
+    	$this->crud->set_relation('idciudad','ciudades','nombreciudad');/*
     	$this->crud->set_relation('idtipoidentificacion','tipoidentificacion','tipoid');
-    	$this->crud->set_relation('idepsasociada','tipoeps','nombreeps');
+    	$this->crud->set_relation('idepsasociada','tipoeps','nombreeps');*/
 	   	$tablacrud = $this->crud->render();
-*//*
+
 		$data["js_files"]=$tablacrud->js_files;
 		$data["css_files"]=$tablacrud->css_files;
 	    $data["tablacrud"] = $tablacrud->output;
-*/
-		$data["titulo"]="Inicio";
+
+		$data["titulo"]="Modulo de pacientes";
 		$data["nombreusuario"]=$this->session->userdata('nombre');
 
 		//$this->load->view('header', $arrayHeader = array(
 		//	'tituloHeader' => "Principal HDV", 
 		//	"nombreusuario" => $data["nombreusuario"]));
-		$this->load->view('index',$data);
+		$this->load->view('modulo',$data);
 
 	}
-
 
 	public function identificacion()
 	{
@@ -120,14 +111,14 @@ class Principal extends CI_Controller {
 		$data["titulo"]="Listado de usuarios";
 		$data["nombreusuario"]=$this->session->userdata('nombre');
 
-		$this->load->view('header', $arrayHeader = array(
-			'tituloHeader' => "Principal HDV", 
-			"nombreusuario" => $data["nombreusuario"]));
+		//$this->load->view('header', $arrayHeader = array(
+			//'tituloHeader' => "Principal HDV", 
+			//"nombreusuario" => $data["nombreusuario"]));
 		$this->load->view('principal',$data);
 	}
 
 	public function cliente()
-	{/*
+	{
 		$this->crud->set_theme('flexigrid');
 
 
@@ -159,7 +150,7 @@ class Principal extends CI_Controller {
 		$this->load->view('header', $arrayHeader = array(
 			'tituloHeader' => "Principal HDV", 
 			"nombreusuario" => $data["nombreusuario"]));
-		$this->load->view('principal',$data);*/
+		$this->load->view('principal',$data);
 	}
 
 	

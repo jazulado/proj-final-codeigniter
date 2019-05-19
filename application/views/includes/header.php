@@ -4,7 +4,7 @@
             <div class="header-menu">
 
                 <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-hospital-o"></i></a>
                     
                 </div>
 
@@ -21,7 +21,7 @@
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="<?php echo site_url('salir')?>"><i class="fa fa-power-off"></i> Salir</a>
+                            <a class="nav-link" href="<?php /*echo site_url('salir')*/  echo site_url("salir");?>"><i class="fa fa-power-off"></i> Salir</a>
                         </div>
                     </div>
                     <div class="page-header float-right">
