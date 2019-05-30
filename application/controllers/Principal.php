@@ -22,47 +22,28 @@ class Principal extends CI_Controller {
 	public function index()
 	{
 		$data["titulo"]="Inicio";
+
+	    $querypac = $this->db->query('SELECT * FROM pacientes');
+		$data["numpacientes"] = $querypac->num_rows();
+
+
+	    $querymed = $this->db->query('SELECT * FROM medicos');
+		$data["numedicos"] = $querymed->num_rows();
+
+	    $querycita = $this->db->query('SELECT * FROM cita');
+		$data["numcitas"] = $querycita->num_rows();
+
+	    $querymeds = $this->db->query('SELECT * FROM medicamentos');
+		$data["numedicamentos"] = $querymeds->num_rows();
+
 		$data["nombreusuario"]=$this->session->userdata('nombre');
 		$this->load->view('index',$data);
 
+
 	}
 
 
-	public function identificacion()
-	{
-		$this->crud->set_theme('flexigrid');
-
-
-		$this->crud->set_table('tipoidentificacion')
-        ->set_subject('Tipo de identificacion')
-        ->columns(
-        	'idtipoidentificacion',
-        	'tipoid'
-        )
-        ->display_as('idtipoidentificacion','# id')
-        ->display_as('tipoid','Tipo de Identificacion');
-
-
-	    $this->crud->fields(
-        	'idtipoidentificacion',
-        	'tipoid');
-	   	$this->crud->required_fields(
-        	'idtipoidentificacion',
-        	'tipoid');
-	   	$tablacrud = $this->crud->render();
-
-		$data["js_files"]=$tablacrud->js_files;
-		$data["css_files"]=$tablacrud->css_files;
-	    $data["tablacrud"] = $tablacrud->output;
-
-		$data["titulo"]="Listado de usuarios";
-		$data["nombreusuario"]=$this->session->userdata('nombre');
-
-		$this->load->view('header', $arrayHeader = array(
-			'tituloHeader' => "Principal HDV", 
-			"nombreusuario" => $data["nombreusuario"]));
-		$this->load->view('principal',$data);
-	}
+	
 
 
 	

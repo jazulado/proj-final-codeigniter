@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count"><?php echo $numpacientes; ?></span>
                         </h4>
                         <p class="text-light"># de Pacientes</p>
 
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">4324</span>
+                            <span class="count"><?php echo $numedicos; ?></span>
                         </h4>
                         <p class="text-light"># de Medicos</p>
 
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">342423</span>
+                            <span class="count"><?php echo $numcitas; ?></span>
                         </h4>
                         <p class="text-light">Citas asignadas   </p>
 
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">668</span>
+                            <span class="count"><?php echo $numedicamentos; ?></span>
                         </h4>
                         <p class="text-light">Medicamentos</p>
 

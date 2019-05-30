@@ -55,12 +55,8 @@ class Medicos extends CI_Controller {
         	'telefono',
         	'email',
         	'direccion',
-        	'idciudad');/*
-		$this->crud->set_field_upload("imagen","assets/imagenes/");*/
-    	$this->crud->set_relation('idciudad','ciudades','nombreciudad');/*
-    	$this->crud->set_relation('idtipoidentificacion','tipoidentificacion','tipoid');
-    	$this->crud->set_relation('idepsasociada','tipoeps','nombreeps');*/
-	   	$tablacrud = $this->crud->render();
+        	'idciudad');
+    	$this->crud->set_relation('idciudad','ciudades','nombreciudad');
 
 		$data["js_files"]=$tablacrud->js_files;
 		$data["css_files"]=$tablacrud->css_files;
@@ -69,9 +65,6 @@ class Medicos extends CI_Controller {
 		$data["titulo"]="Modulo de medicos";
 		$data["nombreusuario"]=$this->session->userdata('nombre');
 
-		//$this->load->view('header', $arrayHeader = array(
-		//	'tituloHeader' => "Principal HDV", 
-		//	"nombreusuario" => $data["nombreusuario"]));
 		$this->load->view('modulo',$data);
 
 	}
