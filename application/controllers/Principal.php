@@ -27,14 +27,14 @@ class Principal extends CI_Controller {
 		$data["numpacientes"] = $querypac->num_rows();
 
 
-	    $querymed = $this->db->query('SELECT * FROM medicos');
-		$data["numedicos"] = $querymed->num_rows();
+	    $querypac = $this->db->query('SELECT * FROM medicos');
+		$data["numedicos"] = $querypac->num_rows();
 
-	    $querycita = $this->db->query('SELECT * FROM cita');
-		$data["numcitas"] = $querycita->num_rows();
+	    $querypac = $this->db->query('SELECT * FROM cita');
+		$data["numcitas"] = $querypac->num_rows();
 
-	    $querymeds = $this->db->query('SELECT * FROM medicamentos');
-		$data["numedicamentos"] = $querymeds->num_rows();
+	    $querypac = $this->db->query('SELECT * FROM medicamentos');
+		$data["numedicamentos"] = $querypac->num_rows();
 
 		$data["nombreusuario"]=$this->session->userdata('nombre');
 		$this->load->view('index',$data);
