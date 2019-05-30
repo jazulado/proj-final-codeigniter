@@ -23,9 +23,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = "http://localhost/proj-final-codeigniter/";
+$config['base_url'] = "http://localhost".":".$_SERVER['SERVER_PORT']."/proj-final-codeigniter/";
 
 /*
+$config['base_url'] = "http://localhost/proj-final-codeigniter/";
+$config['base_url'] = "http://localhost:81/proj-final-codeigniter/";
+
+
+
 |--------------------------------------------------------------------------
 | Index File
 |--------------------------------------------------------------------------

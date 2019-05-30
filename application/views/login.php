@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="bg-dark">
+<body style="background-color: #272c33;">
 
 
     <div class="sufee-login d-flex align-content-center flex-wrap">
@@ -48,21 +48,9 @@
                                 <div class="checkbox">
                                     <label>
                                 <input type="checkbox"> Recordarme
-                            </label>
-                                    <label class="pull-right">
-                                <a href="#">Se te olvido la contraseña?</a>
-                            </label>
 
                                 </div>
                                 <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">ENTRAR</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        
-                                    </div>
-                                </div>
-                                <div class="register-link m-t-15 text-center">
-                                    <p>No tienes una cuenta? <a href="#"> Registrate aqui</a></p>
-                                </div>
                     </form>
                 </div>
             </div>

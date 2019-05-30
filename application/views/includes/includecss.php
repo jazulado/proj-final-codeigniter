@@ -1,5 +1,5 @@
 <title> <?php echo $titulo; ?> - EPS Salud Total</title>
-
+<link rel=" shortcut icon" href="<?php echo base_url();?>assets/images/favicon.png">
 <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/themify-icons/css/themify-icons.css">

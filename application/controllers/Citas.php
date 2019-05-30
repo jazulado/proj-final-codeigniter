@@ -5,7 +5,6 @@ class Citas extends CI_Controller {
 
 	function __construct() {
 		parent:: __construct();  
-		$this->load->helper('form');
 		$this->load->model("usuarios_model");
 		$this->load->database();
 		$this->load->library('session');
@@ -48,8 +47,7 @@ class Citas extends CI_Controller {
             'idpaciente',
             'idmedico',
             'fecha',
-            'observacionescita');/*
-		$this->crud->set_field_upload("imagen","assets/imagenes/");*/
+            'observacionescita');
     	$this->crud->set_relation('idpaciente','pacientes','nombre');
     	$this->crud->set_relation('idmedico','medicos','nombre');
 
