@@ -3,7 +3,7 @@
 <head>
 			<?php include("includes/includecss.php"); ?>
 </head>
-<body><div></div>
+<body>
 			<?php include("includes/menu.php"); ?>
 	
 

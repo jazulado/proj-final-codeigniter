@@ -56,11 +56,14 @@ class Medicos extends CI_Controller {
         	'email',
         	'direccion',
         	'idciudad');
+
     	$this->crud->set_relation('idciudad','ciudades','nombreciudad');
+	   	$tablacrud = $this->crud->render();
+	    
+	    $data["tablacrud"] = $tablacrud->output;	
 
 		$data["js_files"]=$tablacrud->js_files;
 		$data["css_files"]=$tablacrud->css_files;
-	    $data["tablacrud"] = $tablacrud->output;
 
 		$data["titulo"]="Modulo de medicos";
 		$data["nombreusuario"]=$this->session->userdata('nombre');

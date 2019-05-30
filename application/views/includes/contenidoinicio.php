@@ -220,7 +220,7 @@
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Nuevos clientes</div>
-                                <div class="stat-digit">961</div>
+                                <div class="stat-digit"><?php echo $numpacientes; ?></div>
                             </div>
                         </div>
                     </div>
@@ -234,7 +234,7 @@
                             <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Clientes activos </div>
-                                <div class="stat-digit">770</div>
+                                <div class="stat-digit"><?php echo $numpacientes; ?></div>
                             </div>
                         </div>
                     </div>

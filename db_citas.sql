@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2019 a las 03:19:41
+-- Tiempo de generación: 30-05-2019 a las 03:36:19
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.12
 
@@ -37,6 +37,13 @@ CREATE TABLE `cita` (
   `observacionescita` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `cita`
+--
+
+INSERT INTO `cita` (`idcita`, `idpaciente`, `idmedico`, `fecha`, `hora`, `observacionescita`) VALUES
+(1, 2, 1, '2019-05-08', '00:00:00', '<p>\n	<span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna consequat, maximus tortor vel, hendrerit ex. Etiam sem sem, posuere in nunc non, gravida tristique nibh.</span></p>\n');
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +54,16 @@ CREATE TABLE `ciudades` (
   `idciudad` int(11) NOT NULL,
   `nombreciudad` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ciudades`
+--
+
+INSERT INTO `ciudades` (`idciudad`, `nombreciudad`) VALUES
+(1, 'Medellin'),
+(2, 'Bogota'),
+(3, 'Cali'),
+(4, 'Popayan');
 
 -- --------------------------------------------------------
 
@@ -99,6 +116,13 @@ CREATE TABLE `medicamentos` (
   `nombremedicamento` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `medicamentos`
+--
+
+INSERT INTO `medicamentos` (`refmedicamento`, `nombremedicamento`) VALUES
+('D8A', 'Acetaminofen');
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +138,13 @@ CREATE TABLE `medicos` (
   `direccion` varchar(100) NOT NULL,
   `idciudad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `medicos`
+--
+
+INSERT INTO `medicos` (`idmedico`, `nombre`, `apellidos`, `telefono`, `email`, `direccion`, `idciudad`) VALUES
+(1, 'Norman ', 'Perez', '213231', 'normanpere@gmai.com', 'CRA 80 870', 1);
 
 -- --------------------------------------------------------
 
@@ -131,6 +162,15 @@ CREATE TABLE `pacientes` (
   `idciudad` int(11) NOT NULL,
   `observaciones` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `pacientes`
+--
+
+INSERT INTO `pacientes` (`idpaciente`, `nombre`, `apellido`, `telefono`, `email`, `direccion`, `idciudad`, `observaciones`) VALUES
+(1, 'Marisol Ramirez', 'Marisol Ramirez', '4343432', 'anlly.08uribe@outlook.com', 'Marisol Ramirez CRA 48', 1, '<p>\n	<span style=\"color: rgb(0, 0, 0);\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna consequat, maximus tortor vel, hendrerit ex. Etiam sem sem, posuere in nunc non, gravida tristique nibh.</span></p>\n'),
+(2, 'Pedro', 'Isaza', '78430927', 'pedro@jmail.com', 'Cra 21 21 ', 1, '<p>\n	<span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna consequat, maximus tortor vel, hendrerit ex. Etiam sem sem, posuere in nunc non, gravida tristique nibh.</span></p>\n'),
+(3, 'Juan', ' Ramirez', '4343432', 'juanho@outlook.com', 'CRA 2934 84', 2, '<p>\n	Marisol RamirezMarisol RamirezMarisol RamirezMarisol RamirezMarisol Ramirez</p>\n');
 
 --
 -- Índices para tablas volcadas
@@ -188,13 +228,13 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT de la tabla `cita`
 --
 ALTER TABLE `cita`
-  MODIFY `idcita` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `ciudades`
 --
 ALTER TABLE `ciudades`
-  MODIFY `idciudad` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idciudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `formulas`
@@ -212,13 +252,13 @@ ALTER TABLE `historiaclinica`
 -- AUTO_INCREMENT de la tabla `medicos`
 --
 ALTER TABLE `medicos`
-  MODIFY `idmedico` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idmedico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `idpaciente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpaciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
